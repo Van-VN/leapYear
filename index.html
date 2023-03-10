@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #result {
+            display: inline-block;
+            margin: 0;
+            font-style: italic;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="getYear" placeholder="Nhập năm">
+<button onclick="yearCheck()">Bấm để kiểm tra năm nhuận</button>
+<br>
+<p style="display:inline-block;">Kết quả: </p>
+<p id="result"></p>
+<script>
+    function yearCheck() {
+        let input;
+        input = +document.getElementById("getYear").value;
+        console.log(input);
+        if (input % 4 === 0 && input % 100 !== 0 || input % 400 === 0) {
+            document.getElementById("result").innerHTML = `Năm ${input} là năm nhuận.`
+        } else {
+            document.getElementById("result").innerHTML = `Năm ${input} không phải là năm nhuận.`
+        }
+    }
+</script>
+</body>
+</html>
